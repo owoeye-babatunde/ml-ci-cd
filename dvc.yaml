@@ -16,5 +16,19 @@ stages:
     - train.py
     - utils_and_constants.py
     metrics:
+      # Specify the metrics file as target
       - metrics.json:
+          cache: false
+    plots:
+      # Set the target to the file containing predictions data
+      - predictions.csv:
+          # Write the plot template
+          template: confusion_normalized
+          x: predicted_label
+          y: true_label
+          x_label: 'Predicted label'
+          y_label: 'True label'
+          title: Confusion matrix
+          # Set the cache parameter to store
+          # plot data in git repository
           cache: false
