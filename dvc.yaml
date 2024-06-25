@@ -1,4 +1,11 @@
 stages:
+
+  install_dependencies:
+    cmd: pip install -r requirements.txt
+    deps:
+      - ./requirements.txt
+    outs: []
+
   preprocess:
     cmd: python3 preprocess_dataset.py
     deps:
